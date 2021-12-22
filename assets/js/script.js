@@ -57,5 +57,3 @@ buttonEl.addEventListener("click", function(event) {
     let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
 renderGalleryItem(randomImageIndex);
 });
-
-callapi();
