@@ -17,18 +17,9 @@ function callapi() {
 })
 }
 
-buttonEl.addEventListener("click", function(event) {
-    event.preventDefault();
-    console.log(event)
-    callapi();
-});
 
-callapi();
+// callapi();
 // remove this call if we do not want a joke to display when the page loads
-
-
-
-
 
 // Notes from tutoring:
 // var whatever = [];
@@ -36,4 +27,35 @@ callapi();
 // whatever.push("hello")
 // console.log(whatever)
 
-// 2nd api https://placebear.com/g/200/300
+// 2nd api https://unsplash.com/collections/9396519/bears
+
+
+const numImagesAvailable = 145   //how many photos are total in the collection
+const numItemsToGenerate = 1; //how many photos you want to display
+const imageWidth = 480;    //image width in pixels
+const imageHeight = 480;   //image height in pixels
+const collectionID = 9396519  //Bears, the collection ID from the original url
+const galleryContainer = document.querySelector('#gallery-item')
+function renderGalleryItem(randomNumber){
+    fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${randomNumber}`)
+    .then((response) => {
+        console.log(response)
+        let galleryItem = document.createElement('img');
+        galleryItem.setAttribute("src", `${response.url}`)
+        document.body.append(galleryItem)
+})
+}
+for(let i=0; i < numItemsToGenerate; i++){
+    
+}
+
+
+buttonEl.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log(event)
+    callapi();
+    let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
+renderGalleryItem(randomImageIndex);
+});
+
+callapi();
