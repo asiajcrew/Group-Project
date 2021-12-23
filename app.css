@@ -6,3 +6,12 @@
     color:tomato;
     background-color: rgb(99, 49, 99);
 }
+.btn {
+    position: center;
+}
+body {
+    background-color: rgb(99, 49, 99);
+    justify-content: center;
+}
+
+
