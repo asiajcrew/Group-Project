@@ -26,8 +26,8 @@ function callapi() {
 
 const numImagesAvailable = 145   //how many photos are total in the collection
 const numItemsToGenerate = 1; //how many photos you want to display
-const imageWidth = 480;    //image width in pixels
-const imageHeight = 480;   //image height in pixels
+const imageWidth = 360;    //image width in pixels
+const imageHeight = 360;   //image height in pixels
 const collectionID = 9396519  //Bears, the collection ID from the original url
 const galleryContainer = document.querySelector('#gallery-item')
 function renderGalleryItem(randomNumber){
@@ -35,6 +35,7 @@ function renderGalleryItem(randomNumber){
     .then(function(response) {
         console.log(response)
         let galleryItem = document.createElement('img');
+        galleryItem.className = "center-bear";
         galleryItem.setAttribute("src", `${response.url}`)
         document.body.append(galleryItem)
 })
