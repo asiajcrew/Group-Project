@@ -1,9 +1,9 @@
 .jumbotron {
-    color: tomato;
+    color: rgb(255, 255, 255);
     background-color: rgb(99, 49, 99);
 }
 .jumbotron2 {
-    color:tomato;
+    color:rgb(255, 255, 255);
     background-color: rgb(99, 49, 99);
 }
 .btn {
@@ -14,4 +14,6 @@ body {
     justify-content: center;
 }
 
-
+.initial-joke {
+    color: rgb(255, 255, 255);
+}

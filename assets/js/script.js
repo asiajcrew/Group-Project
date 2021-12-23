@@ -4,6 +4,7 @@ var buttonEl = document.getElementById("new-joke");
 var introJoke = document.getElementById("intro-joke")
 
 var listItemEl = document.createElement("h4");
+listItemEl.className = "initial-joke";
 listItemEl.textContent = "What Do You Call A Bear With No Teeth? A Gummy Bear!";
 introJoke.appendChild(listItemEl);
 
@@ -49,4 +50,4 @@ buttonEl.addEventListener("click", function(event) {
     let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
 renderGalleryItem(randomImageIndex);
 });
-renderGalleryItem();
+// renderGalleryItem();
