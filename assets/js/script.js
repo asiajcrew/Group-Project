@@ -26,8 +26,8 @@ function callapi() {
 
 const numImagesAvailable = 145   //how many photos are total in the collection
 const numItemsToGenerate = 1; //how many photos you want to display
-const imageWidth = 480;    //image width in pixels
-const imageHeight = 480;   //image height in pixels
+const imageWidth = 360;    //image width in pixels
+const imageHeight = 360;   //image height in pixels
 const collectionID = 9396519  //Bears, the collection ID from the original url
 const galleryContainer = document.querySelector('#gallery-item')
 function renderGalleryItem(randomNumber){
@@ -35,6 +35,7 @@ function renderGalleryItem(randomNumber){
     .then(function(response) {
         console.log(response)
         let galleryItem = document.createElement('img');
+        galleryItem.className = "center-bear";
         galleryItem.setAttribute("src", `${response.url}`)
         document.body.append(galleryItem)
 })
@@ -51,3 +52,29 @@ buttonEl.addEventListener("click", function(event) {
 renderGalleryItem(randomImageIndex);
 });
 // renderGalleryItem();
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
